@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>아키텍처 다이어그램 — 리센셜 유튜브 댓글 자동화</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
+         max-width: 720px; margin: 48px auto; padding: 0 20px; line-height: 1.6; color: #222; }
+  h1 { font-size: 1.3rem; }
+  .col { display: flex; flex-direction: column; align-items: center; gap: 6px; margin: 20px 0; }
+  .box { border: 1px solid #333; border-radius: 8px; padding: 12px 18px; text-align: center;
+         background: #fafafa; width: 100%; max-width: 520px; box-sizing: border-box; }
+  .box b { display: block; margin-bottom: 4px; }
+  .box small { color: #555; font-size: 0.82rem; }
+  .arrow { font-size: 1.3rem; color: #555; }
+  .row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; width: 100%; }
+  .row .box { max-width: 240px; }
+  a { color: #1a5fb4; }
+</style>
+</head>
+<body>
+<h1>아키텍처 다이어그램 — 리센셜 유튜브 댓글 자동화</h1>
+
+<div class="col">
+
+  <div class="box"><b>사람 (담당자)</b><small>영상·문구 검수 화면에서 승인/반려만 결정</small></div>
+  <div class="arrow">↓ 승인된 것만</div>
+
+  <div class="box"><b>내부 서버 (AWS Lightsail, 1대)</b><small>Python 파이프라인 + 15분 간격 크론</small></div>
+  <div class="arrow">↓</div>
+
+  <div class="row">
+    <div class="box"><b>수집</b><small>search.list · videos.list<br>키워드로 관련 영상 탐색</small></div>
+    <div class="box"><b>문구 배정</b><small>사람이 미리 써 둔<br>템플릿 문구에서 선택(AI 아님)</small></div>
+    <div class="box"><b>게시</b><small>commentThreads.insert<br>승인된 것만, 간격 두고</small></div>
+  </div>
+  <div class="arrow">↓</div>
+
+  <div class="box"><b>YouTube Data API v3</b><small>Google Cloud 프로젝트 1개</small></div>
+  <div class="arrow">↓ OAuth</div>
+
+  <div class="box"><b>리센셜 소유 유튜브 계정 4개</b><small>전부 브랜드 소유임이 드러나는 공식 계정<br>(일반 시청자로 위장한 계정 없음)</small></div>
+
+</div>
+
+<p style="margin-top:28px">문의: <a href="mailto:bagchanho562@gmail.com">bagchanho562@gmail.com</a></p>
+<p><a href="index.html">홈으로</a></p>
+</body>
+</html>

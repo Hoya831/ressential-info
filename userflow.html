@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>사용자 흐름 다이어그램 — 리센셜 유튜브 댓글 자동화</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
+         max-width: 640px; margin: 48px auto; padding: 0 20px; line-height: 1.6; color: #222; }
+  h1 { font-size: 1.3rem; }
+  ol { padding-left: 1.4em; }
+  li { margin: 14px 0; }
+  .step { border: 1px solid #333; border-radius: 8px; padding: 12px 16px; background: #fafafa; }
+  .step b { display: block; margin-bottom: 4px; }
+  .step small { color: #555; font-size: 0.82rem; }
+  .arrow { text-align: center; font-size: 1.2rem; color: #555; margin: 4px 0; }
+  a { color: #1a5fb4; }
+</style>
+</head>
+<body>
+<h1>사용자 흐름 다이어그램 — 리센셜 유튜브 댓글 자동화</h1>
+<p>담당자 1명이 매일 사용하는 흐름입니다. 외부 사용자(일반 대중)는 이 도구에 접근하지 않습니다.</p>
+
+<div class="step"><b>① 영상 수집 (자동)</b><small>시스템이 등록된 키워드로 관련 영상을 찾아 목록에 쌓는다</small></div>
+<div class="arrow">↓</div>
+<div class="step"><b>② 문구 배정 (자동)</b><small>담당자가 미리 써 둔 템플릿 문구 중 하나를 영상에 배정한다(새로 생성 안 함)</small></div>
+<div class="arrow">↓</div>
+<div class="step"><b>③ 사람이 검수 화면에서 확인 (사람)</b><small>영상 제목·배정된 댓글 문구를 하나씩 또는 여러 개 선택해 본다</small></div>
+<div class="arrow">↓</div>
+<div class="step"><b>④ 승인 또는 반려 (사람, 핵심 결정 지점)</b><small>어울리지 않거나 부적절하면 반려 — 반려된 것은 절대 게시되지 않는다</small></div>
+<div class="arrow">↓ 승인된 것만</div>
+<div class="step"><b>⑤ 자동 게시 (자동, 속도 제한)</b><small>하루 상한·시간당 상한·최소 간격을 두고 조금씩 게시 — 사람이 매번 누르지 않아도 됨</small></div>
+<div class="arrow">↓</div>
+<div class="step"><b>⑥ 생존 관측 (자동)</b><small>게시 1일·7일 후 댓글이 그대로 있는지 재확인 — 채널 주인이 지우면 그 채널은 영구 제외</small></div>
+
+<p style="margin-top:28px">문의: <a href="mailto:bagchanho562@gmail.com">bagchanho562@gmail.com</a></p>
+<p><a href="index.html">홈으로</a></p>
+</body>
+</html>
